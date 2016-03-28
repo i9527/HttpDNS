@@ -32,7 +32,7 @@ HttpDNS的特点：
 
 
 ## 部署方式
-    $ git clone https://github.com/luost/httpdns
+    $ git clone https://github.com/luost/HttpDNS
     $ cd httpdns
     $ pip install -r requirements.txt
     $ python manager runserver 0.0.0.0:80 # 推荐使用uwsgi + nginx部署
