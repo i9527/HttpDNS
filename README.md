@@ -20,8 +20,10 @@ HttpDNS的特点：
 
 
 ## 部署环境要求
+
 #### 网络环境
 * BGP（支持any cast更佳）
+
 #### 软件环境（Python第三方库）
 * django
 * requests
