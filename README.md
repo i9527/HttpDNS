@@ -42,12 +42,12 @@ HttpDNS的特点：
 数据请求和应答均使用 http get 协议。
 
 ####请求格式
-接口示例：为“http://ip:port/?domain=www.163.com.&client_ip=1.1.1.1”
+接口示例：为“http://ip:port/?domain=www.163.com&client_ip=1.1.1.1”
 * domain 必选，表示要查询的域名
 * client_ip 可选，表示用户 ip，可以不携带 client_ip 参数，当没有这个 ip 参数时，服务器会把 http 报文的源 ip 当做用户 ip。
 * ttl 可选，指定域名解析的ttl
 除了以上三个参数，在请求的同时可以携带任何自定义参数，用于调度时使用，如：
-* http://ip:port/?domain=www.163.com.&client_ip=1.1.1.1&client_version=v1.0.1&platform=ios&user_id=111111
+* http://ip:port/?domain=www.163.com&client_ip=1.1.1.1&client_version=v1.0.1&platform=ios&user_id=111111
 
 ####返回格式
 返回示例：{"server_ip_list": ["1.1.1.1", "2.2.2.2"], "ttl": 600, domain": "node1.www.163.com", "backup": [ip1, ip2]}
