@@ -102,7 +102,7 @@ class DNSResolver(object):
             if res.status_code == 200 and res.content:
                 _ip_str, _ttl = res.content.split(",")
                 _server_ip_list = _ip_str.split(";")
-        finally:
+        except:
             return _server_ip_list, _ttl
 
     @classmethod
@@ -125,7 +125,7 @@ class DNSResolver(object):
                 content = des_obj.decrypt(res.content, padmode=pyDes.PAD_PKCS5)
                 _ip_str, _ttl = content.split(",")
                 _server_ip_list = _ip_str.split(";")
-        finally:
+        except:
             return _server_ip_list, _ttl
 
 
@@ -300,7 +300,7 @@ class Dispatcher(object):
         try:
             func = eval(v2)
             status = func(str(v1))
-        finally:
+        except:
             return status
 
 
@@ -422,7 +422,7 @@ class CacheController(object):
         cache_key = cls._get_dispatch_rule_cache_key_(domain)
         try:
             cache_conn.Delete(cache_key)
-        finally:
+        except:
             return True
 
     @classmethod
